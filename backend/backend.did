@@ -1,8 +1,17 @@
 type Rule = 
  record {
    category: text;
+   icon: text;
    rules: vec text;
  };
+type QuizQuestion = 
+ record {
+   correctAnswer: nat;
+   options: vec text;
+   question: text;
+ };
 service : {
+  getQuizQuestions: () -> (vec QuizQuestion) query;
+  getRandomFunFact: () -> (text);
   getRules: () -> (vec Rule) query;
 }
