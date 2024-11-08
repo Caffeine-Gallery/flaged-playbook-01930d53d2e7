@@ -1,0 +1,8 @@
+type Rule = 
+ record {
+   category: text;
+   rules: vec text;
+ };
+service : {
+  getRules: () -> (vec Rule) query;
+}
